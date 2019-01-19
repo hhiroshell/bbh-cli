@@ -3,21 +3,36 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '4.0.3'
 }
 
+configurations {
+    provided
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://raw.github.com/hhiroshell/beehive4j/mvn-repo' }
+    maven { url 'http://repo.spring.io/plugins-release/' }
+}
+
 group 'jp.gr.java_conf.hhiroshell'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
+    compile group: 'jp.gr.java_conf.hhiroshell', name: 'beehive4j', version: 'v0.1'
+    compile group: 'info.picocli', name: 'picocli', version: '3.9.1'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    // for building native-image
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.8'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk7', version: '2.6.7'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.9.8'
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-joda', version: '2.9.8'
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.9.8'
+    provided group: 'javax.xml.stream', name: 'com.springsource.javax.xml.stream', version: '1.0.1'
 }
 
 jar {
     manifest {
-        attributes "Main-Class" : "jp.gr.java_conf.hhiroshell.bbhelper.cli.Main"
+        attributes "Main-Class": "jp.gr.java_conf.hhiroshell.bbhelper.cli.Main"
     }
 }
