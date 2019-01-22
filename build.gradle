@@ -19,8 +19,10 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 dependencies {
-    compile group: 'jp.gr.java_conf.hhiroshell', name: 'beehive4j', version: 'v0.1'
     compile group: 'info.picocli', name: 'picocli', version: '3.9.1'
+    compile group: 'jp.gr.java_conf.hhiroshell', name: 'beehive4j', version: 'v0.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.8'
     testCompile group: 'junit', name: 'junit', version: '4.12'
     // for building native-image
     compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.8'

@@ -1,0 +1,16 @@
+[
+ {
+    "name" : "jp.gr.java_conf.hhiroshell.bbhelper.cli.Config",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  },
+  {
+    "name" : "jp.gr.java_conf.hhiroshell.beehive4j.MyWorkspaceInvoker",
+    "allDeclaredConstructors" : true,
+    "allPublicConstructors" : true,
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  }
+]
