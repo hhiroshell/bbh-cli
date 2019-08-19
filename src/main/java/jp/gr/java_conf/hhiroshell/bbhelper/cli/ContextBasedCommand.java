@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
 
 abstract class ContextBasedCommand implements Callable<Void> {
 
-    static protected BeehiveContext context;
+    static private BeehiveContext context;
 
     @Override
     public Void call() throws Exception {
@@ -25,10 +25,10 @@ abstract class ContextBasedCommand implements Callable<Void> {
                 e.printStackTrace();
             }
         }
-        doIt();
+        doIt(context);
         return null;
     }
 
-    abstract void doIt();
+    abstract void doIt(BeehiveContext context) throws Exception;
 
 }
